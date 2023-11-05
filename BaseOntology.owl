@@ -126,14 +126,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasDuration -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasDuration">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasEthnicity -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasEthnicity">
@@ -177,14 +169,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasImpact -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasImpact">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasMedicalFactor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasMedicalFactor">
@@ -217,46 +201,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasPhysicalEnvironment">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#_hasContextualEnvironment"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#PhysicalEnvironment"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverity -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverity">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverityMild -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverityMild">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverityModerate -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverityModerate">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverityProfound -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverityProfound">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeveritySevere -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeveritySevere">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSeverity"/>
     </owl:ObjectProperty>
     
 
@@ -436,25 +380,29 @@
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Age0-18Patient -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Age0-18Patient">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasAge"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
-                            </rdf:Description>
-                            <rdf:Description>
-                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:maxInclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasAge"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -462,25 +410,29 @@
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Age19-34Patient -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Age19-34Patient">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasAge"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</xsd:minInclusive>
-                            </rdf:Description>
-                            <rdf:Description>
-                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</xsd:maxInclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasAge"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -488,25 +440,29 @@
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Age35-64Patient -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Age35-64Patient">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasAge"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</xsd:minInclusive>
-                            </rdf:Description>
-                            <rdf:Description>
-                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64</xsd:maxInclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasAge"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -704,38 +660,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AppetiteLoss">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#InternalizingConstruct"/>
         <rdfs:comment>This construct involves a reduction or loss of appetite, reduced interest in food, skipping meals, and eating less than usual. Because of these symptoms, there often is a sudden, unintentional loss of weight.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtDiagnosisDate -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtDiagnosisDate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#TimeInterval"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtOneMonth -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtOneMonth">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#TimeInterval"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtThreeMonths -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtThreeMonths">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#TimeInterval"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtTwoMonths -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtTwoMonths">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#TimeInterval"/>
     </owl:Class>
     
 
@@ -1331,15 +1255,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Duration -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Duration">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ValuePartition"/>
-        <rdfs:comment>Duration of episodes</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Dysthymia -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Dysthymia">
@@ -1602,13 +1517,17 @@
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#FemalePatient -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#FemalePatient">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSex"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Female"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSex"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Female"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -1823,15 +1742,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Impact -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Impact">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ValuePartition"/>
-        <rdfs:comment>How much does the factor impact the treatment</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Inattention -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Inattention">
@@ -1953,21 +1863,25 @@
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#InternalizingPatient -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#InternalizingPatient">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasConstructWithMeasure2"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#InternalizingConstruct"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasConstructWithMeasure3"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#InternalizingConstruct"/>
-                    </owl:Restriction>
-                </owl:unionOf>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasConstructWithMeasure2"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#InternalizingConstruct"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasConstructWithMeasure3"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#InternalizingConstruct"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -2091,13 +2005,17 @@
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#MalePatient -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#MalePatient">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSex"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Male"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasSex"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Male"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -2936,16 +2854,6 @@ as if nothing can hurt them.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Severity -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Severity">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ValuePartition"/>
-        <rdfs:comment>GAF score? Positieve gezondheid volgens Huber?</rdfs:comment>
-        <rdfs:comment>How severe is the factor</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Sex -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Sex">
@@ -3367,12 +3275,6 @@ as if nothing can hurt them.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#TimeInterval -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#TimeInterval"/>
-    
-
-
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Tolerance -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Tolerance">
@@ -3434,12 +3336,6 @@ as if nothing can hurt them.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ValuePartition -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ValuePartition"/>
-    
-
-
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#VerbalAbuse -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#VerbalAbuse">
@@ -3496,22 +3392,26 @@ as if nothing can hurt them.</rdfs:comment>
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Age65+Patient -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Age65+Patient">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasAge"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</xsd:minInclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#hasAge"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -12876,15 +12776,6 @@ ICANotes-sample mental health progress note</rdfs:comment>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtDiagnosisDate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtOneMonth"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtThreeMonths"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#AtTwoMonths"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#BehavioralRigidity"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#DetailFocused"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#InhibitedEmotionalExpression"/>
@@ -12951,8 +12842,6 @@ ICANotes-sample mental health progress note</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ContextualFactors"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#HiTOP"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Patient"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#TimeInterval"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ValuePartition"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -12997,14 +12886,6 @@ ICANotes-sample mental health progress note</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ElectroconvulsiveTherapy"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#OtherTreatment"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Psychotherapy"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Duration"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Impact"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#Severity"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
