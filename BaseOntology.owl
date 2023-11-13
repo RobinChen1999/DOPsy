@@ -952,13 +952,16 @@
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ContextualEnvironment">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ContextualFactors"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#IndividualFactor"/>
+        <rdfs:comment>Environmental factors, representing the environment around an individual.</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ContextualFactors -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ContextualFactors"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ContextualFactors">
+        <rdfs:comment>Contextual factors that might affect the mental health of an individual.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1635,7 +1638,9 @@
 
     <!-- http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#HiTOP -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#HiTOP"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#HiTOP">
+        <rdfs:comment>Hierarchical Taxonomy Of Psychopathology - a hierarchical framework describing psychopathology concepts.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1765,6 +1770,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#IndividualFactor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/robin/ontologies/2023/3/base-ontology#ContextualFactors"/>
+        <rdfs:comment>Individual factors, representing an individual.</rdfs:comment>
     </owl:Class>
     
 
